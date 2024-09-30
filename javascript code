@@ -1,0 +1,25 @@
+document.getElementById('resumeForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    // Get form values
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const phone = document.getElementById('phone').value;
+    const experience = document.getElementById('experience').value;
+    const education = document.getElementById('education').value;
+
+    // Create resume content
+    const resumeContent = `
+        <h3>${name}</h3>
+        <p>Email: ${email}</p>
+        <p>Phone: ${phone}</p>
+        <h4>Experience</h4>
+        <p>${experience}</p>
+        <h4>Education</h4>
+        <p>${education}</p>
+    `;
+
+    // Display the resume
+    document.getElementById('resumeContent').innerHTML = resumeContent;
+    document.getElementById('resumeOutput').style.display = 'block';
+});
